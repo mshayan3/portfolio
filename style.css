@@ -10,20 +10,21 @@
 /* =========================================
    LIGHT THEME (default)
    ========================================= */
-/* Palette: "Monochrome Beach"
-   Graphite #353535 · Stormy Teal #3c6e71 · White #ffffff · Dust Grey #d9d9d9 · Yale Blue #284b63 */
+/* Palette: Coolors 04550232983344157
+   Moss Green #809848 · Ghost White #fafaff · Coral #e88d67 · Charcoal #333333 · Rich Black #050c0f */
 :root {
-  --bg: #ffffff;
-  --bg-alt: #f0f0f0;            /* dust grey, lightened for large surfaces */
-  --fg: #353535;                /* graphite */
-  --fg-muted: #5f5f5f;
-  --fg-subtle: #8f8f8f;
-  --accent: #3c6e71;            /* stormy teal */
-  --accent-hover: #284b63;      /* yale blue */
-  --border: #d9d9d9;            /* dust grey */
-  --card-bg: #ffffff;
-  --shadow: 0 8px 30px rgba(53,53,53,0.10);
-  --nav-bg: rgba(255, 255, 255, 0.88);
+  --bg: #fbfaf5;                /* warm white */
+  --bg-alt: #f5f3e2;            /* ivory */
+  --fg: #333333;                /* charcoal */
+  --fg-muted: #5e6165;
+  --fg-subtle: #93969e;
+  --accent: #5e7135;            /* moss green, darkened for contrast on light */
+  --accent-hover: #4a5a2a;
+  --accent-2: #d9764d;          /* coral, deepened slightly for light bg */
+  --border: #e3e2d6;            /* warmed to sit well on ivory */
+  --card-bg: #fdfcf5;           /* warm off-white */
+  --shadow: 0 8px 30px rgba(5,12,15,0.09);
+  --nav-bg: rgba(251, 250, 245, 0.88);
 
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   --font-serif: 'Crimson Pro', Georgia, serif;
@@ -40,17 +41,18 @@
    DARK THEME
    ========================================= */
 html.dark {
-  --bg: #262626;                /* deepened graphite */
-  --bg-alt: #2e2e2e;
-  --fg: #d9d9d9;                /* dust grey */
-  --fg-muted: #a6a6a6;
-  --fg-subtle: #767676;
-  --accent: #78adb0;            /* stormy teal, lightened for dark bg */
-  --accent-hover: #93c3c6;
-  --border: #3d3d3d;
-  --card-bg: #313131;           /* graphite card */
-  --shadow: 0 8px 30px rgba(0,0,0,0.35);
-  --nav-bg: rgba(38, 38, 38, 0.88);
+  --bg: #0b0c0a;                /* neutral near-black, hint of green */
+  --bg-alt: #141512;
+  --fg: #f0efe9;                /* warm off-white */
+  --fg-muted: #a8aaa2;
+  --fg-subtle: #6b6e65;
+  --accent: #809848;            /* moss green */
+  --accent-hover: #9ab364;
+  --accent-2: #e88d67;          /* coral */
+  --border: #2a2d27;
+  --card-bg: #191b17;
+  --shadow: 0 8px 30px rgba(0,0,0,0.45);
+  --nav-bg: rgba(11, 12, 10, 0.88);
 }
 
 html {
@@ -66,7 +68,7 @@ html {
   z-index: 200;
   padding: 10px 18px;
   background: var(--accent);
-  color: #fff;
+  color: #f6f4e4;
   border-radius: 0 0 var(--radius) var(--radius);
   font-size: 13px;
   text-decoration: none;
@@ -96,6 +98,11 @@ button:focus-visible {
     opacity: 1;
     transform: none;
   }
+}
+
+::selection {
+  background: var(--accent-2);
+  color: #f6f4e4;
 }
 
 body {
@@ -287,7 +294,7 @@ section {
 .section-label span:first-child {
   font-family: var(--font-serif);
   font-size: 13px;
-  color: var(--fg-subtle);
+  color: var(--accent-2);
   font-style: italic;
 }
 
@@ -335,7 +342,7 @@ section {
 .hero-eyebrow {
   font-size: 14px;
   font-weight: 400;
-  color: var(--fg-subtle);
+  color: var(--accent-2);
   letter-spacing: 0.04em;
   margin-bottom: 12px;
 }
@@ -390,7 +397,7 @@ section {
 
 .btn-primary {
   background: var(--accent);
-  color: #fff;
+  color: #f6f4e4; /* cream instead of stark white */
   border-color: var(--accent);
 }
 
@@ -401,7 +408,7 @@ section {
 
 /* Dark theme uses a lighter accent, so primary buttons need dark text */
 html.dark .btn-primary {
-  color: #1b2223;
+  color: #121408;
 }
 
 .btn-ghost {
@@ -559,7 +566,7 @@ html.dark .btn-primary {
   transition: border-color var(--transition);
 }
 
-.timeline-item:hover { border-left-color: var(--accent); }
+.timeline-item:hover { border-left-color: var(--accent-2); }
 
 .timeline-header {
   display: flex;
@@ -671,7 +678,7 @@ html.dark .btn-primary {
   font-family: var(--font-serif);
   font-style: italic;
   font-size: 13px;
-  color: var(--fg-subtle);
+  color: var(--accent-2);
 }
 
 .project-links { display: flex; gap: 12px; }
@@ -714,7 +721,8 @@ html.dark .btn-primary {
 }
 
 .project-card--featured .project-number {
-  color: var(--accent);
+  color: var(--accent-2);
+  font-weight: 600;
 }
 
 /* =========================================
@@ -799,7 +807,7 @@ html.dark .btn-primary {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #f59e0b;
+  background: #e88d67; /* coral */
   animation: pulse 2s ease-in-out infinite;
 }
 
