@@ -611,6 +611,23 @@ html.dark .btn-primary {
   color: var(--fg-subtle);
 }
 
+.timeline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: var(--accent);
+  text-decoration: none;
+  margin-bottom: 14px;
+  transition: color var(--transition);
+}
+
+.timeline-link:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
 /* =========================================
    TAGS
    ========================================= */
